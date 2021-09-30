@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="nav">
+      <router-link to="/">Home</router-link>
+      <router-link to"/about">About</router-link>
+    </div>
+    <router-view/>
+    {{ $store.state.count}}
+    <Crud />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Vue from 'vue'
+import router from 'vue-router'
+import Crud from './components/Crud.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Crud
   }
 }
 </script>
